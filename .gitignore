@@ -1,0 +1,17 @@
+.idea/
+.gradle/
+!build.gradle
+Rock-Paper-Scissors\ (Java)/*
+!Rock-Paper-Scissors\ (Java)/task/
+Rock-Paper-Scissors\ (Java)/task/*
+!Rock-Paper-Scissors\ (Java)/task/src/
+!Rock-Paper-Scissors\ (Java)/task/test/
+course-info.yaml
+course-remote-info.yaml
+!gradle/
+!gradlew
+gradlew.bat
+!settings.gradle
+Topics
+notes.txt
+logs
