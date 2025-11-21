@@ -22,34 +22,34 @@ public class ProcessInput {
      * @return
      *      the corespondig result based on user and computer selected values
      */
-    public static String computeInput(String input, String computerOption) {
-        String res = null;
+    public static int computeInput(String input, String computerOption) {
+        int res = 0;
         switch(computerOption) {
             case "paper":
                 if (input.equals("rock")) {
-                    res = "Sorry, but the computer chose " + computerOption ;
+                    res = 1;
                 } else if (input.equals(computerOption)) {
-                    res = "Draw: There is a draw (" + computerOption + ")";
+                    res = 2;
                 } else {
-                    res = "Well done. The computer chose " + computerOption + " and failed";
+                    res = 3;
                 }
                 break;
             case "scissors":
                 if (input.equals("paper")) {
-                    res = "Sorry, but the computer chose " + computerOption;
+                    res = 1;
                 } else if (input.equals(computerOption)) {
-                    res = "Draw: There is a draw (" + computerOption + ")";
+                    res = 2;
                 } else {
-                    res = "Well done. The computer chose " + computerOption + " and failed";
+                    res = 3;
                 }
                 break;
             case "rock":
                 if (input.equals("scissors")) {
-                    res = "Sorry, but the computer chose " + computerOption;
+                    res = 1;
                 } else if (input.equals(computerOption)) {
-                    res = "Draw: There is a draw (" + computerOption + ")";
+                    res = 2;
                 } else {
-                    res = "Well done. The computer chose " + computerOption + " and failed";
+                    res = 3;
                 }
                 break;
         }
