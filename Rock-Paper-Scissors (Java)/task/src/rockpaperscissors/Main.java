@@ -9,7 +9,14 @@ import static rockpaperscissors.core.ProcessInput.getRandom;
 
 public class Main {
 
-    private static final String[] options = {"paper", "scissors", "rock"};
+    private static String[] options = {"paper", "scissors", "rock"};
+
+    private static void initOptions(String input) {
+        if (!input.isEmpty()) {
+            options = input.split(",");
+        }
+        System.out.println("Okay, let's start");
+    }
 
     public static void main(String[] args) {
         // write your code here
@@ -22,6 +29,9 @@ public class Main {
         System.out.print("Enter your name: ");
         String username = scan.nextLine();
         System.out.println("Hello, " + username);
+
+        input = scan.nextLine();
+        initOptions(input);
 
         while(true) {
             input = scan.nextLine();
