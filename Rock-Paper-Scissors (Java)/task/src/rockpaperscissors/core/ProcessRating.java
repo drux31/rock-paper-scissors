@@ -31,10 +31,9 @@ public class ProcessRating {
 
     private static HashMap<String, Integer> extractRatingFromFile() {
         HashMap<String, Integer> ratings = new HashMap<>();
-        try {
-            String file_path = "rating.txt";
-            BufferedReader reader = new BufferedReader(new FileReader(file_path));
+        String file_path = "rating.txt";
 
+        try (BufferedReader reader = new BufferedReader(new FileReader(file_path))){
             String line;
             while((line = reader.readLine()) != null) {
 
