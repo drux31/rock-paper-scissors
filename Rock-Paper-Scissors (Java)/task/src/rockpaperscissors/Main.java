@@ -22,8 +22,6 @@ public class Main {
         ProcessRating.initRating();
         Scanner scan = new Scanner(System.in);
         String input;
-        String computerOption;
-        int res;
         HashMap<Integer, String> resbis;
 
         System.out.print("Enter your name: ");
@@ -35,9 +33,7 @@ public class Main {
 
         while(true) {
             input = scan.nextLine();
-            //ProcessInput.processInput(input, username, options);
 
-            computerOption = options[getRandom(options.length)];
             if (input.equals("!exit")) {
                 break;
             } else if (input.equals("!rating")) {
@@ -45,7 +41,6 @@ public class Main {
             } else if (!ProcessInput.checkInput(input, options)) {
                 System.out.println("Invalid input");
             } else {
-                res = computeInput(input, computerOption);
                 resbis = processInput(input, username, options);
                 for (Map.Entry<Integer, String> obj : resbis.entrySet()) {
                     System.out.println(obj.getValue());

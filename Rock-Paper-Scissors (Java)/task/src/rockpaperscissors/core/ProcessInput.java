@@ -49,7 +49,7 @@ public class ProcessInput {
                  j++;
                  i++;
             }
-            //System.out.println(orderedOptions);
+
             // Check if the user input is in the first half
             if (orderedOptions.subList(0, orderedOptions.size()/2).contains(computeOption)) {
                 res.put(2, "Sorry, but the computer chose " + computeOption);
