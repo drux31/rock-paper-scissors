@@ -6,6 +6,8 @@ import java.util.HashMap;
 public class ProcessRating {
 
     private static HashMap<String, Integer> ratings;
+    public final static int DRAW = 50;
+    public final static int USER_WIN = 100;
 
     public static void initRating() {
         ratings = extractRatingFromFile();

@@ -4,8 +4,7 @@ import rockpaperscissors.core.ProcessRating;
 
 import java.util.*;
 
-import static rockpaperscissors.core.ProcessInput.computeInput;
-import static rockpaperscissors.core.ProcessInput.getRandom;
+import static rockpaperscissors.core.ProcessInput.*;
 
 public class Main {
 
@@ -25,6 +24,7 @@ public class Main {
         String input;
         String computerOption;
         int res;
+        HashMap<Integer, String> resbis;
 
         System.out.print("Enter your name: ");
         String username = scan.nextLine();
@@ -35,6 +35,8 @@ public class Main {
 
         while(true) {
             input = scan.nextLine();
+            //ProcessInput.processInput(input, username, options);
+
             computerOption = options[getRandom(options.length)];
             if (input.equals("!exit")) {
                 break;
@@ -44,19 +46,9 @@ public class Main {
                 System.out.println("Invalid input");
             } else {
                 res = computeInput(input, computerOption);
-                switch (res) {
-                    case 1:
-                        System.out.println("Sorry, but the computer chose " + computerOption);
-                        ProcessRating.setRating(username, 0);
-                        break;
-                    case 2:
-                        System.out.println("Draw: There is a draw (" + computerOption + ")");
-                        ProcessRating.setRating(username, 50);
-                        break;
-                    case 3:
-                        System.out.println("Well done. The computer chose " + computerOption + " and failed");
-                        ProcessRating.setRating(username, 100);
-                        break;
+                resbis = processInput(input, username, options);
+                for (Map.Entry<Integer, String> obj : resbis.entrySet()) {
+                    System.out.println(obj.getValue());
                 }
             }
         }
